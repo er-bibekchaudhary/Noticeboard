@@ -8,7 +8,6 @@ using System.Web;
 /// </summary>
 public class RoutineInfo
 {
-    public int RoutineID { get; set; }
     public int DayID { get; set; }
     public int ClassID { get; set; }
     public string First { get; set; }

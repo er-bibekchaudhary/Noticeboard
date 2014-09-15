@@ -45,13 +45,13 @@ public class FacultyDAL
         string sp = "USP_GetFaculty_ByID";
         SqlCommand cmd = new SqlCommand(sp, con);
         cmd.Parameters.Add(new SqlParameter("@ID",id));
-        cmd.CommandType=CommandType.StoredProcedure;
+        cmd.CommandType = CommandType.StoredProcedure;
         try
         {
             SqlDataReader _Reader = cmd.ExecuteReader();
             _Reader.Read();
 
-            FacultyInfo _batch = new FacultyInfo();
+            FacultyInfo _faculty = new FacultyInfo();
             _faculty.FacultyID = int.Parse(_Reader["FacultyID"].ToString());
             _faculty.FacultyName = _Reader["FacultyName"].ToString();
             return _faculty;
@@ -79,5 +79,4 @@ public class FacultyDAL
            throw ex;
        }
     }
-}
 }

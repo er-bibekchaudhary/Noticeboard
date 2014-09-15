@@ -19,7 +19,7 @@
 
      <br />
     <br />
-    <p algin= "right">
+    <p align="right">
     <asp:Label ID="LblName" runat="server" Text=""></asp:Label>
     </p>
     </div>

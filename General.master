@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="General.master.cs" Inherits="General" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Assets/Css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/Css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Assets/Css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Assets/Js/bootstrap.js" type="text/javascript"></script>
+    <script src="~/Assets/Js/bootstrap.min.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+              
+            
+</head>
+<body>
+    <form id="form1" runat="server">
+     
+    <div class="container">
+    <div class="row">
+    <div class="pull-left col-md-1" >
+    <img src="../Assets/Images/""/>
+    </div> 
+    
+    <div class="col-md-11">
+        <h1>Online Notice Board System</h1>
+        <h3>Name Of Ogranization</h3>
+    </div>
+
+    </div>
+  </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="navbar navbar-default">
+                <div class="container">
+                    <ul class=" nav navbar-nav">
+                        <li><a href="Home.aspx">HOME</a></li>
+                        <li><a href="Routine.aspx">ROUTINE</a></li>
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </div>
+
+
+
+     <div class="container">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    
+   
+    </form>
+</body>
+</html>

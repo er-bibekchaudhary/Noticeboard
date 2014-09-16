@@ -14,7 +14,7 @@ public class TeachersInfo
     public int DepartmentID { get; set; }
     public int EmpID { get; set; }
     public string Address { get; set; }
-    public int ContactNo { get; set; }
+    public string ContactNo { get; set; }
     public string Email { get; set; }
 	public TeachersInfo()
 	{

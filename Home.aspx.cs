@@ -11,9 +11,17 @@ public partial class Home : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-           
+            Binddropdowns();
+            BindRepeter();
         }
     }
+
+    protected void BindRepeter()
+    {
+        rptrAll.DataSource = NoticeDAL.getallNotice();
+        rptrAll.DataBind();
+    }
+
     protected void Binddropdowns()
     {
         DDLFaculty.DataSource = FacultyDAL.getallFaculty();

@@ -101,6 +101,7 @@ public partial class Admin_SettingContent : System.Web.UI.Page
         FacultyDAL.DeleteFaculty(id);
         loadReapeters();
     }
+
     protected void BtnDeleteBatch_Click(object sender, EventArgs e)
     {
        int id = int.Parse((sender as Button).CommandArgument.ToString());

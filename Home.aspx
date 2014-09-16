@@ -31,7 +31,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<div class="row">
+    <div class="row">
   <div class="col-md-6">         
    <asp:Panel ID="PnlAll" runat="server" GroupingText="All Notices">
 
@@ -71,8 +71,8 @@
          <tr>
         <td colspan='2' align="center"> 
        
-            <asp:Button ID="BtnSignUp" runat="server" Text="SignUp" 
-                CssClass="btn btn-default" onclick="BtnSignUp_Click"  /><br />
+            <asp:Button ID="BtnSignIn" runat="server" Text="Sign In" 
+                CssClass="btn btn-default"  /><br />
             <a href=#> Forgot Password</a>
            
              </td>
@@ -103,15 +103,13 @@
 
    <tr>
    <td>Faculty</td>
-   <td><asp:DropDownList ID="DDLFaculty" CssClass="form-control" runat="server" 
-           onselectedindexchanged="DDLFaculty_SelectedIndexChanged">
+   <td><asp:DropDownList ID="DDLFaculty" CssClass="form-control" runat="server" >
    </asp:DropDownList></td>
     </tr>
 
     <tr>
    <td>Batch</td>
-   <td><asp:DropDownList ID="DDLBatch" CssClass="form-control" runat="server" 
-           onselectedindexchanged="DDLBatch_SelectedIndexChanged">
+   <td><asp:DropDownList ID="DDLBatch" CssClass="form-control" runat="server">
    </asp:DropDownList></td>
     </tr>
 
@@ -142,7 +140,7 @@
            Text="Sign Up" onclick="BtnSignUp_Click" />
       
        <asp:Button ID="BtnReset" runat="server" CssClass="btn btn-default" 
-           Text="Reset" onclick="BtnReset_Click" />
+           Text="Reset"/>
        </td>
     </tr>
     </table>

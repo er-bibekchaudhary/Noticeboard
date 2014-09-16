@@ -29,18 +29,13 @@
 
    <tr>
    <td>Depatrment:</td>
-   <td><asp:DropDownList runat="server" AutoPostBack="True" CssClass="form-control">
-   <asp:ListItem>IT </asp:ListItem>
-   <asp:ListItem>Computer </asp:ListItem>
-   <asp:ListItem>Electronic & Communication </asp:ListItem>
-   <asp:ListItem>Software Engineering </asp:ListItem>
-   <asp:ListItem>BBA </asp:ListItem>
+   <td><asp:DropDownList ID="DdlDept" runat="server" CssClass="form-control">
    </asp:DropDownList></td>
     </tr>
 
    <tr>
    <td>Employee ID No.:</td>
-   <td>  <asp:TextBox ID="TxtRollno" runat="server" CssClass="form-control"></asp:TextBox></td>
+   <td>  <asp:TextBox ID="TxtEmpID" runat="server" CssClass="form-control"></asp:TextBox></td>
     </tr>
 
     <tr>
@@ -62,7 +57,9 @@
 
     <tr>
    <td colspan='2'><center>
-       <asp:Button ID="BtnSave" runat="server" Text="Save" CssClass="btn btn-default" />
+   <asp:Label ID="LblCreateMsg" runat="server" Text=""></asp:Label> <br />
+       <asp:Button ID="BtnCreate" runat="server" Text="Create" 
+           CssClass="btn btn-default" onclick="BtnCreate_Click" />
        &nbsp;&nbsp;&nbsp;
        <asp:Button ID="BtnReset" runat="server" Text="Reset" CssClass="btn btn-default" /></center>
        </td>
@@ -72,7 +69,7 @@
 </asp:Panel>
 
 
-<asp:Panel runat="server" ID="PnlEditUser" GroupingText="Edit User">
+<asp:Panel runat="server" ID="PnlEditUser" GroupingText="Edit User" Visible=false>
 					
 <table>
     <tr>
@@ -88,7 +85,7 @@
     </tr>
     <tr>
     <td>Name:</td>
-    <td><asp:TextBox ID="TxtNameEdit" runat="server" CssClass="form-control"></asp:TextBox></td>
+    <td><asp:TextBox ID="TxtFNameEdit" runat="server" CssClass="form-control"></asp:TextBox></td>
     </tr>
 
     <tr>
@@ -99,12 +96,7 @@
   
     <tr>
    <td>Department:</td>
-   <td><asp:DropDownList ID="DdlFacultyEdit" runat="server" CssClass="form-control" AutoPostBack="True">
-   <asp:ListItem>IT </asp:ListItem>
-   <asp:ListItem>Computer </asp:ListItem>
-   <asp:ListItem>Electronic & Communication </asp:ListItem>
-   <asp:ListItem>Software Engineering </asp:ListItem>
-   <asp:ListItem>BBA </asp:ListItem>
+   <td><asp:DropDownList ID="DdlDeptEdit" runat="server" CssClass="form-control">
    </asp:DropDownList></td>
     </tr>
 
@@ -122,7 +114,7 @@
     <tr>
    <td>
     E-mail:</td>
-   <td> <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox></td>
+   <td> <asp:TextBox ID="TxtEmailEdit" runat="server" CssClass="form-control"></asp:TextBox></td>
     </tr>
 
      <tr>
@@ -133,6 +125,7 @@
 
      <tr>
    <td colspan='2' ><center>
+   <asp:Label ID="LblEditMsg" runat="server" Text=""></asp:Label> <br />
        <asp:Button ID="BtnSaveEdit" runat="server" Text="Save" CssClass="btn btn-default" /> 
        &nbsp;&nbsp;&nbsp;
        <asp:Button ID="BtnResetEdit" runat="server" Text="Reset" CssClass="btn btn-default" /></center></td>

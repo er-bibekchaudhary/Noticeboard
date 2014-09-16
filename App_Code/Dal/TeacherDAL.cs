@@ -10,7 +10,7 @@ using System.Data;
 /// </summary>
 public class TeacherDAL
 {
-    public static void CreateNotice(TeachersInfo _Teacher)
+    public static void CreateTeachers(TeachersInfo _Teacher)
     {
         SqlConnection Con = ConnectionHelper.GetConnection();
         string Sp = "USP_Create_Teachers";

@@ -26,6 +26,23 @@ public class FacultyDAL
             throw ex;
         }
     }
+
+     public static bool CheckFaculty(string Faculty)
+     {
+         SqlConnection con = ConnectionHelper.GetConnection();
+         string queery = "Select * from Tbl_Faculty where FacultyName='" +Faculty+"'";
+
+         SqlCommand cmd = new SqlCommand(queery, con);
+
+         DataTable dt = new DataTable();
+         SqlDataAdapter da = new SqlDataAdapter(cmd);
+         da.Fill(dt);
+         if (dt.Rows.Count == 0)
+             return true;
+         else
+             return false;
+     }
+
     public static DataTable getallFaculty()
     {
         SqlConnection con = ConnectionHelper.GetConnection();
@@ -78,5 +95,21 @@ public class FacultyDAL
         {
            throw ex;
        }
+    }
+
+    public static void DeleteFaculty(int id)
+    {
+        SqlConnection con = ConnectionHelper.GetConnection();
+        string querry = "delete * from Tbl_Faculty where FacultyID=" + id;
+        SqlCommand cmd = new SqlCommand(querry, con);
+
+        try
+        {
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
     }
 }

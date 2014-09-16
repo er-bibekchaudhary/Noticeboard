@@ -14,7 +14,7 @@ public class TutorialInfo
     public string Reference { get; set; }
     public string FileName { get; set; }
     public DateTime PostedOn { get; set; }
-    public string PostedBy { get; set; }
+    public int PostedBy { get; set; }
     public DateTime Deadline { get; set; }
 	public TutorialInfo()
 	{

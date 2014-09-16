@@ -13,6 +13,7 @@ public partial class Notice : System.Web.UI.Page
         NoticeInfo _Notice = NoticeDAL.getNoticeByID(Number1);
         LblHeading.Text = _Notice.Reference;
         LblBody.Text = _Notice.Notice;
+        Lbldate.Text = (_Notice.PostedOn.Date).ToString();
         string name= TeacherDAL.getTeacherByID(_Notice.PostedBy).FirstName + TeacherDAL.getTeacherByID(_Notice.PostedBy).LastName;
         LblName.Text = name;
 

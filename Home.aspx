@@ -22,10 +22,7 @@
                     buttons: {
                         "Close": function () { $dialog.dialog('close'); }
                     },
-                    close: function (event, ui) {
-
-                        __doPostBack('<%= btnRefresh.ClientID %>', '');
-                    }
+                    
                 });
                 $dialog.dialog('open');
                 e.preventDefault();
@@ -74,7 +71,8 @@
          <tr>
         <td colspan='2' align="center"> 
        
-            <asp:Button ID="Button1" runat="server" Text="Button" CssClass="btn btn-default" /><br />
+            <asp:Button ID="BtnSignUp" runat="server" Text="SignUp" 
+                CssClass="btn btn-default" onclick="BtnSignUp_Click"  /><br />
             <a href=#> Forgot Password</a>
            
              </td>
@@ -105,7 +103,15 @@
 
    <tr>
    <td>Faculty</td>
-   <td><asp:DropDownList ID="DDLFaculty" CssClass="form-control" runat="server">
+   <td><asp:DropDownList ID="DDLFaculty" CssClass="form-control" runat="server" 
+           onselectedindexchanged="DDLFaculty_SelectedIndexChanged">
+   </asp:DropDownList></td>
+    </tr>
+
+    <tr>
+   <td>Batch</td>
+   <td><asp:DropDownList ID="DDLBatch" CssClass="form-control" runat="server" 
+           onselectedindexchanged="DDLBatch_SelectedIndexChanged">
    </asp:DropDownList></td>
     </tr>
 
@@ -132,9 +138,11 @@
 
     <tr>
    <td colspan='2' align="center">
-       <asp:Button ID="BtnSignUp" runat="server" CssClass="btn btn-default" Text="Sign Up" />
+       <asp:Button ID="BtnSignUp" runat="server" CssClass="btn btn-default" 
+           Text="Sign Up" onclick="BtnSignUp_Click" />
       
-       <asp:Button ID="BtnReset" runat="server" CssClass="btn btn-default" Text="Reset" />
+       <asp:Button ID="BtnReset" runat="server" CssClass="btn btn-default" 
+           Text="Reset" onclick="BtnReset_Click" />
        </td>
     </tr>
     </table>

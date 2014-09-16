@@ -10,8 +10,11 @@
     <form id="form1" runat="server">
     <div>
     <h1>
-    <asp:Label ID="LblHeading" runat="server" Text=" "></asp:Label>
-    </h1>
+    <asp:Label ID="LblHeading" runat="server" Text=" "></asp:Label></h1>
+    <br />
+    <p align="left">
+    <asp:Label ID="Lbldate" runat="server" Text=" "></asp:Label></p>
+    
     <br />
     <br />
     <br />

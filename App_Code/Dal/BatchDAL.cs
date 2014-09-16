@@ -26,6 +26,22 @@ public class BatchDAL
             throw ex;
         }
     }
+    public static bool CheckBatch(int year)
+    {
+        SqlConnection con = ConnectionHelper.GetConnection();
+        string queery = "Select * from Tbl_Batch where BatchYear=" + year;
+
+        SqlCommand cmd = new SqlCommand(queery, con);
+
+        DataTable dt = new DataTable();
+        SqlDataAdapter da= new SqlDataAdapter(cmd);
+        da.Fill(dt);
+        if(dt.Rows.Count==0)
+            return true;
+        else
+            return false;
+    }
+
     public static DataTable getallBatch()
     {
         SqlConnection con = ConnectionHelper.GetConnection();
@@ -79,4 +95,20 @@ public class BatchDAL
            throw ex;
        }
     }
+    public static void Deletebatch(int id)
+    {
+        SqlConnection con = ConnectionHelper.GetConnection();
+        string querry = "delete * from Tbl_Batch where BatchID="+id;
+        SqlCommand cmd = new SqlCommand(querry, con);
+
+        try
+        {
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
 }

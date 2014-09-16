@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="true" CodeFile="Settings.aspx.cs" Inherits="Admin_Settings" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="true" CodeFile="SettingPersonal.aspx.cs" Inherits="Admin_SettingPersonal" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -15,14 +15,10 @@
             <asp:LinkButton ID="LbtPassword" runat="server" onclick="LbtPassword_Click">Password</asp:LinkButton></li>
   </ul>
   
-  <li>Users Setting</li>
-    <ul>
-        <li>
-            <asp:LinkButton ID="LbtPendingRequet" runat="server" 
-                onclick="LbtPendingRequet_Click">Pending Request</asp:LinkButton></li>
-            <li>
-            <asp:LinkButton ID="LbtDeleteUsers" runat="server" onclick="LbtDeleteUsers_Click">Delete Users</asp:LinkButton></li>
-    </ul>
+  <li><a href="SettingUser.aspx" >Users Setting</a></li>
+
+    <li><a href="SettingContent.aspx">Content settings</a></li>
+    
   </ol>
 </div>
 
@@ -87,32 +83,6 @@
 <asp:Button ID="BtnChange" runat="server"  Text="Change" CssClass="btn btn-default"/> 
 </asp:Panel>
 
-
-
-<asp:Panel ID="pnlPending" runat="server" Visible="false">
-
-</asp:Panel>
-
-
-<asp:Panel ID="PnlDeleteUser" runat="server" Visible="false">
-
-<asp:TextBox ID="TxtSearch" runat="server" CssClass="form-control pull-left" Width="50%"></asp:TextBox>
-
- <asp:Button runat="server" ID="BtnSearch" Text="Search" CssClass="btn btn-default pull-left" />
-<asp:Repeater ID="rptrRelated"   runat="server">
-                                <ItemTemplate>
-                                       <%#Eval("UserName") %>
-                                       <asp:Button ID="BtnDelete"  runat="server" Text="Delete" />
-                                                <br />
-                        </ItemTemplate>
-                    </asp:Repeater>
- </asp:Panel>
-
-
-
-
-
 </div>
-
 </asp:Content>
 

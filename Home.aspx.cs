@@ -9,6 +9,27 @@ public partial class Home : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+        {
+           
+        }
+    }
+    protected void Binddropdowns()
+    {
+        DDLFaculty.DataSource = FacultyDAL.getallFaculty();
+        DDLFaculty.DataTextField = "FacultyName";
+        DDLFaculty.DataValueField = "FacultyID";
+        DDLFaculty.DataBind();
+        DDLFaculty.Items.Insert(0, "--Choose Faculty--");
+
+        DDLBatch.DataSource = BatchDAL.getallBatch();
+        DDLBatch.DataTextField = "BatchYear";
+        DDLBatch.DataValueField = "BatchID";
+        DDLBatch.DataBind();
+        DDLBatch.Items.Insert(0, "--Choose Batch--");
+    }
+    protected void BtnSignUp_Click(object sender, EventArgs e)
+    {
 
     }
 }

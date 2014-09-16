@@ -21,10 +21,6 @@
                     buttons: {
                         "Close": function () { $dialog.dialog('close'); }
                     },
-                    close: function (event, ui) {
-
-                        __doPostBack('<%= btnRefresh.ClientID %>', '');
-                    }
                 });
                 $dialog.dialog('open');
                 e.preventDefault();
